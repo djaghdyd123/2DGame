@@ -15,6 +15,6 @@ public class tile : MonoBehaviour
 
     void Update()
     {
-        
+        // 블록이 있는 좌표를 리스트로 담는다.
     }
 }
