@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class Define
 {
+    public enum MoveDir
+    {
+        Up,
+        Down,
+        Left,
+        Right,
+        None
+    }
     public enum WorldObject
     {
         Unknown,
