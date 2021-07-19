@@ -8,6 +8,13 @@ public class Managers : MonoBehaviour
 
     static Managers GetInstance() { Init(); return s_instance; }
 
+    #region Contents
+    MapManager _map = new MapManager();
+    ObjectManager _obejct = new ObjectManager();
+
+    public static MapManager Map { get { return GetInstance()._map; } }
+    public static ObjectManager Object { get { return GetInstance()._obejct; } }
+    #endregion
 
     #region Core
     DataManager _data = new DataManager();

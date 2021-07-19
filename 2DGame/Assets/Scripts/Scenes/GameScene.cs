@@ -8,11 +8,27 @@ public class GameScene : BaseScene
     {
         base.Init();
 
+        SceneType = Define.Scene.Game;
+        Managers.Map.LoadMap(1);
+        GameObject player = Managers.Resources.Instantiate("Creature/Player");
+        player.name = "Player";
 
-        GameObject go = new GameObject { name = "Spawningpool" };
-     
+        Managers.Object.Add(player);
 
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject monster = Managers.Resources.Instantiate("Creature/Monster");
+            monster.name = $"Monster{i}";
 
+            Vector3Int pos = new Vector3Int()
+            {
+                x = Random.Range(-10, 10),
+                y = Random.Range(-5, 5)
+            };
+            MonsterController mc = monster.GetComponent<MonsterController>();
+            mc.CellPos = pos;
+            Managers.Object.Add(monster);
+        }
     }
 
     public override void Clear()
