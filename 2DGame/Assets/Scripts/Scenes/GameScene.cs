@@ -10,6 +10,9 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.Game;
         Managers.Map.LoadMap(1);
+
+        Screen.SetResolution(640, 480, false);
+
         GameObject player = Managers.Resources.Instantiate("Creature/Player");
         player.name = "Player";
 
