@@ -141,8 +141,8 @@ public class MonsterController : CreatureController
         effect.GetComponent<Animator>().Play("Start");
         GameObject.Destroy(effect, 0.5f);
 
-        Managers.Object.Remove(gameObject);
-        Managers.Resources.Destroy(gameObject);
+        Managers.Object.Remove(Id);
+        Managers.Resources.Destroy(Id);
     }
 
     IEnumerator CoPatrol()
