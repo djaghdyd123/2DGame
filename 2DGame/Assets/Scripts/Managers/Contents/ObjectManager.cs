@@ -13,22 +13,22 @@ public class ObjectManager
         if(myPlayer)
         {
             GameObject player = Managers.Resources.Instantiate("Creature/MyPlayer");
-            go.name = info.name;
-            _objects.Add(info.playerId,go);
+            player.name = info.Name;
+            _objects.Add(info.PlayerId, player);
 
-            MyPlayer = go.getComponent<MyPlayerController>();
-            MyPlayer.Id = info.playerId;
-            MyPlayer.CellPos = new Vector3Int(info.posX, info.posY ,0);
+            MyPlayer = player.GetComponent<MyPlayerController>();
+            MyPlayer.Id = info.PlayerId;
+            MyPlayer.CellPos = new Vector3Int(info.PosX, info.PosY ,0);
         }
         else
         {
             GameObject player = Managers.Resources.Instantiate("Creature/Player");
-            go.name = info.name;
-            _objects.Add(info.playerId,go);
+            player.name = info.Name;
+            _objects.Add(info.PlayerId, player);
 
-            pc = go.getComponent<PlayerController>();
-            pc.Id = info.playerId;
-            pc.CellPos = new Vector3Int(info.posX, info.posY ,0);
+            PlayerController pc = player.GetComponent<PlayerController>();
+            pc.Id = info.PlayerId;
+            pc.CellPos = new Vector3Int(info.PosX, info.PosY, 0);
         }
     }
     public void Add(int id,GameObject go)
@@ -46,7 +46,7 @@ public class ObjectManager
         if(MyPlayer== null)
         return;
         Remove(MyPlayer.Id);
-        MyPlayer == null;
+        MyPlayer = null;
 
     }
     public GameObject Find(Vector3Int cellPos)

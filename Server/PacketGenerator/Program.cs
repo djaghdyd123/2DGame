@@ -62,9 +62,9 @@ namespace PacketGenerator
 			}
 
 			string clientManagerText = string.Format(PacketFormat.managerFormat, clientRegister);
-			File.WriteAllText("ClientPacketManager.cs", clientManagerText);
+			File.WriteAllText("./ClientPacketManager.cs", clientManagerText);
 			string serverManagerText = string.Format(PacketFormat.managerFormat, serverRegister);
-			File.WriteAllText("ServerPacketManager.cs", serverManagerText);
+			File.WriteAllText("./ServerPacketManager1.cs", serverManagerText);
 		}
 
 		public static string FirstCharToUpper(string input)

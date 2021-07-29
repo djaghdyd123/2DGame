@@ -142,7 +142,7 @@ public class MonsterController : CreatureController
         GameObject.Destroy(effect, 0.5f);
 
         Managers.Object.Remove(Id);
-        Managers.Resources.Destroy(Id);
+        Managers.Resources.Destroy(gameObject);
     }
 
     IEnumerator CoPatrol()

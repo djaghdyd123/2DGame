@@ -9,7 +9,7 @@ public class MyPlayerController : PlayerController
     {
         base.Init();
     }
-    protected override void updateController()
+    protected override void UpdateController()
     {
         switch(State)
         {
